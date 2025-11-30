@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhai's Website!</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      line-height: 1.5;
+      text-transform: lowercase;
+    }
+
+    #grad {
+      background-image: linear-gradient(to bottom, rgb(255, 255, 255, 0.9), rgb(255, 177, 220, 0.9));
+      background-color: #333;
+      min-height: 100vh;
+      color: #333333; 
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      line-height: 1.0;
+      color: #d67d94;
+      text-transform: lowercase;
+    }
+
+    .home {
+        width:128px;
+        margin: 10px;
+        border:10px solid red;
+        border-radius: 500px;
+        -webkit-border-radius: 500px;
+        -moz-border-radius: 500px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #ffccea;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #ffd9f5;
+    }
+
+    h1, h2 {
+      font-weight: 900;
+      color: #d67d94;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      font-weight: bold;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    header img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin-top: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    header p {
+      color: #d67d94;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2rem 0 1rem 0;
+      border-top: 1px solid #ff96e3;
+      padding-top: 1rem;
+    }
+
+    nav a {
+      position: relative;
+      font-weight: 500;
+      color: #333;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #ff94c2;
+      transition: width 0.3s ease-in-out;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section.about {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    section.about p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #555;
+      font-size: 1.05rem;
+    }
+
+    section.contacts {
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+    }
+
+    section.contacts h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #ff3f99;
+    }
+
+    a .card {
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      color: rgb(42, 15, 24); 
+      margin-bottom: 0.50cm;
+      animation: appear linear;
+      animation-timeline: view();
+      animation-range: entry 0;
+    }
+    a .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    section.contacts a {
+      border-bottom: 1px dashed #ff5e93;
+      color: #ff4bae;
+      font-weight: 500;
+    }
+    section.contacts a:hover {
+      color: #ff5487;
+      border-bottom-color: #ff46a2;
+    }
+    
+    .view h2 { 
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #ff3f99;
+
+
+    }
+    .view img {
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+      width: 90%; 
+      max-width: 900px;
+      height: auto;
+      
+      animation: appear linear;
+      animation-timeline: view();
+      animation-range: entry 0;
+    }
+    
+    .view .block img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    .view .block-container2 img {
+        width: 30%;
+        height: 50%;
+        align-items: left;
+ 
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .view .block-container video {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    }
+    .certifs {
+      padding-top: 2rem;
+      text-align: center; 
+      margin-bottom: 3rem;
+    }
+
+    .certifs h2 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      color: #ff3f99;
+    }
+    
+    .certifs .cert-container {
+      display: flex; 
+      justify-content: center; 
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+
+    .certifs img{
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      
+
+      width: 90%; 
+      max-width: 400px;
+      height: auto;
+      
+      animation: appear linear;
+      animation-timeline: view();
+      animation-range: entry 0;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+      border-top: 1px solid #ff96e3;
+      padding-top: 1rem;
+    }
+
+    @keyframes appear{
+      from{
+        opacity: 0;
+        scale: 0.5;
+      }
+      to {
+        opacity: 1;
+        scale: 1;
+      }
+    }
+  
+    @media (max-width: 600px) {
+      #grad {
+        padding: 1rem;
+      }
+      nav {
+        gap: 1rem;
+      }
+      header img {
+        width: 100px;
+        height: 100px;
+      }
+      .certifs img {
+        max-width: 100%;
+      }
+    }
+  </style>
+
+</head>
+<body>
+<div id="grad">
+
+  <nav>
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/027/191/073/small/pixel-art-sakura-flower-icon-png.png" width="50" height="50">
+
+    <a href="#home">✦ home</a>
+    <a href="#about">✦ me</a>
+    <a href="#works">✦ art</a>
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/027/191/073/small/pixel-art-sakura-flower-icon-png.png" width="50" height="50">
+  </nav>
+
+  <header id="home">
+    <span>₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧</span>
+    <h1>hi! i'm ai! </h1> 
+    <p>· aspiring illustrator & game developer ·</p>
+
+
+    <img src="JHAI.jpg" alt="Profile Photo">
+  </header>
+
+
+  <section class="about" id="about">
+    <h2>✦₊❀ introduction !❀₊✦</h2>
+    <span>₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧</span>
+    <p> a self-taught artist ✦ concurrently enrolled at Manuel S. Enverga University Foundation pursuing Bachelor of Science in Entertainment and Multimedia Studies ! </p>
+<h1></h1>
+    <h1> why multimedia arts? </h1>
+    <p>Ever since before Senior High School, I had already set my sights on Multimedia Arts because of my love for comics, video games- specificaly maiden games. Of course, I was scared and considered taking another course many times for a so-called 'more practical' career. But thankfully, my peers and family encouraged me to pursue what I truly love. They told me to follow my passion—so I did.</p>
+
+  </section>
+
+
+  <section class="contacts">
+    <h2>✦*ੈ❀ socials *ੈ❀ :  </h2> 
+    <a href="https://www.instagram.com/junjurunjunjun_?igsh=em02eWRtNGFmZjhm" target="_blank">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title"> ★⋆. ࿐࿔ instagram</h5>
+          <p class="card-text">✦  click this to go to my instagram! </p>
+        </div>
+      </div>
+    </a>
+    <a href="https://www.facebook.com/share/15nEH6Z3zY/" target="_blank">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title"> ★⋆. ࿐࿔ facebook</h5>
+          <p class="card-text">✦ click this to go to my facebook account! reach our to me here !!</p>
+        </div>
+      </div>
+    </a>
+    <a href="https://x.com/junjurunju?t=JgsiRTdhQHYsIXM_GBG7iw&s=09" target="_blank">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title"> ★⋆. ࿐࿔ X</h5>
+          <p class="card-text">✦ click this to go to my x / twitter account!</p>
+        </div>
+      </div>
+    </a>
+    <span><center>₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧</center></span>
+  </section>
+  
+
+  <div class="view" id="works">
+    <h2>✦₊❀ projects .₊❀</h2>
+    
+
+    <div class="block-container"> 
+      <h3><center> ✦ illustrations ✦ </center></h3>
+        <div class="column">
+          <img src="purple.png" alt="Purple" style="width:100%" >
+        </div>
+          <div class="column">
+            <img src="blue.png" alt="Blue"style="width:100%" >
+          </div>
+            <div class="column">
+              <img src="catto.png" alt="Orange" style="width:100%">
+            </div>
+              <div class="row"></div>
+                <div class="block-container2"> 
+                  <img src="comic1.png">
+                  <img src="jhj.png">
+              </div>
+                <div class="game">
+                <video src="supachua.mp4" controls> </video>
+
+              <h3><center>✦ pygame group project ✦ Developed from Visual Studio ✦ </center></h3>
+                <ul>
+                  <h2> ✦ meet the team! </h2>
+                  <p>Main Programmer & Graphics: Calsado, Era</p>
+                  <p>Programmer & Graphics: Dy, Osirish</p>
+                  <p>Graphics: Avenido, Mariel</p>
+                  <p>Grapics: Rebualos, Angel</p>
+                </ul>
+                </div>
+            </div>
+  </div>
+
+
+  <div class="certifs">
+    <h2>✦₊❀ certification ₊❀</h2>
+
+    <span>₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧</span>
+    
+    <div class="cert-container">
+
+      <img src="1.jpg" alt="Python Certificate">
+      <img src="2.jpg" alt="AI Ethics Certificate">
+      <img src="3.jpg" alt="HTML & CSS Certificate">
+    </div>
+  </div>
+
+  <section class="reflection">
+    <h2>✦*ੈ❀ reflection *ੈ❀ :  </h2>
+    <span>₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧₊˚౨ৎ˚₊✩‧₊ ₊✩‧</span>
+    <div class="card shadow-sm h-100 p-4 mb-5">
+
+      <p>✦ the process of creating this website portfolio has taught me so much! compiling my creations together made me open my eyes to many possible openings to open hearts to inspire, and most importantly- make money. it also made me realize how important it is to create your own little space where you showcase your own artistic talent to the world, and possibly increasing one's chances to be accepted to jobs one applies to. now in terms of web developing, it's also my first time creating a website like this and it's a constant learning experience- a fun one i can use for fun or in the long run! i'm excited to update this space with new projects and milestones as I share it with the world soon; as well on add more chances to get recruited in the area i want to work in the upcoming future. </p>
+    </div>
+  </section>
+
+  <footer>
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/027/191/073/small/pixel-art-sakura-flower-icon-png.png" width="50" height="50">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/027/191/073/small/pixel-art-sakura-flower-icon-png.png" width="30" height="30">
+    © 2025 rebualos ✦
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/027/191/073/small/pixel-art-sakura-flower-icon-png.png" width="30" height="30">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/027/191/073/small/pixel-art-sakura-flower-icon-png.png" width="50" height="50">
+  </footer>
+
+</div>
+</html>
